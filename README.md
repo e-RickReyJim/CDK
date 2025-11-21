@@ -419,7 +419,7 @@ Generate bar chart showing probabilities for all 5 stages.
 
 ### Dataset
 
-**Source:** UCI Machine Learning Repository - Chronic Kidney Disease Dataset
+**Source:** [Kaggle - Chronic Kidney Disease Dataset](https://www.kaggle.com/datasets/mansoordaku/ckdisease/data) (originally from UCI Machine Learning Repository)
 
 **Features (24):**
 - Numeric: age, blood pressure, specific gravity, albumin, sugar, blood glucose, blood urea, serum creatinine, sodium, potassium, hemoglobin, PCV, WBC count, RBC count
@@ -495,7 +495,7 @@ The predictions provided by this system are based on machine learning models and
 
 ## 🙏 Acknowledgments
 
-- **Dataset:** UCI Machine Learning Repository
+- **Dataset:** [Kaggle](https://www.kaggle.com/datasets/mansoordaku/ckdisease/data) / UCI Machine Learning Repository
 - **ML Frameworks:** scikit-learn, pandas, numpy
 - **Visualization:** matplotlib, seaborn
 - **Web Framework:** Gradio
