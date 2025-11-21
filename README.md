@@ -166,8 +166,21 @@ CDK/
 ├── data/                         # Datasets
 │   └── kidney_disease.csv       # CKD patient data
 │
-├── docs/                         # Documentation (future)
-├── tests/                        # Unit tests (future)
+├── docs/                         # Documentation
+│   ├── QUICKSTART.md            # Quick reference
+│   ├── INSTALLATION.md          # Installation guide
+│   ├── DOCKER.md                # Docker deployment
+│   ├── FLOWCHART.md             # System flowcharts
+│   └── ARCHITECTURE.md          # Architecture diagrams
+│
+├── tests/                        # Test suite (260+ tests)
+│   ├── conftest.py              # Pytest fixtures and test data
+│   ├── test_utils.py            # Utility tests
+│   ├── test_models.py           # Model tests
+│   ├── test_app.py              # Application tests
+│   ├── test_integration.py      # Integration tests
+│   └── test_data_validation.py  # Validation tests
+│
 ├── assets/                       # Images, logos (future)
 │
 ├── requirements.txt              # Python dependencies
@@ -180,49 +193,76 @@ CDK/
 
 ## 🚀 Installation
 
-### Prerequisites
+### Quick Install (Recommended)
 
+**Windows PowerShell:**
+```powershell
+.\install.ps1
+```
+
+This automated script will:
+- ✅ Check Python 3.11+ installation
+- ✅ Create virtual environment
+- ✅ Install all dependencies
+- ✅ Verify installation
+- ✅ Launch the application
+
+**See [docs/INSTALLATION.md](docs/INSTALLATION.md) for detailed instructions.**
+
+---
+
+### Docker Installation
+
+**Using Docker Compose (Easiest):**
+```bash
+docker-compose up -d
+```
+
+**Using Docker CLI:**
+```bash
+docker build -t ckd-predictor .
+docker run -d -p 7870:7870 ckd-predictor
+```
+
+**See [docs/DOCKER.md](docs/DOCKER.md) for complete Docker guide.**
+
+---
+
+### Manual Installation
+
+**Prerequisites:**
 - **Python 3.11+** (tested with 3.11.0)
 - **pip** package manager
 - **Git** (for cloning)
 
-### Step 1: Clone the Repository
+**Steps:**
 
 ```bash
+# 1. Clone repository
 git clone https://github.com/e-RickReyJim/CDK.git
 cd CDK
-```
 
-### Step 2: Create Virtual Environment
-
-```bash
-# Windows
+# 2. Create virtual environment
 python -m venv .venv
-.venv\Scripts\activate
 
-# Linux/Mac
-python3 -m venv .venv
-source .venv/bin/activate
-```
+# 3. Activate virtual environment
+.venv\Scripts\Activate.ps1  # Windows
+source .venv/bin/activate    # Linux/Mac
 
-### Step 3: Install Dependencies
-
-```bash
+# 4. Install dependencies
 pip install -r requirements.txt
 ```
 
-### Step 4: Train Models (Optional)
+**Train Models (Optional):**
 
-If you want to retrain the models or explore the ML pipeline:
+Pre-trained models are included. To retrain:
 
 ```bash
-# Open Jupyter Notebook
 jupyter notebook notebooks/CKD_PCA_Models.ipynb
-
-# Run all cells to train models and save to models/
+# Run all cells
 ```
 
-*Note: Pre-trained models are already included in the `models/` directory.*
+**📖 Complete Installation Guide:** [docs/INSTALLATION.md](docs/INSTALLATION.md)
 
 ---
 
@@ -278,6 +318,33 @@ jupyter notebook notebooks/CKD_PCA_Models.ipynb
 - Hyperparameter tuning
 - Performance evaluation
 - Visualization generation
+
+---
+
+## 🧪 Testing
+
+### Run Tests
+
+```powershell
+# Install test dependencies
+pip install -r requirements-test.txt
+
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=src --cov-report=html
+```
+
+### Test Suite
+
+- **260+ tests** across 6 test modules
+- **Unit tests** for utility functions and models
+- **Integration tests** for end-to-end workflows
+- **Validation tests** for input checking
+- **95%+ code coverage** target
+
+**See [tests/README.md](tests/README.md) for detailed testing guide.**
 
 ---
 

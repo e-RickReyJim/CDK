@@ -1,0 +1,49 @@
+# Coverage Configuration
+# ======================
+
+[run]
+source = src
+omit =
+    */tests/*
+    */__pycache__/*
+    */venv/*
+    */.venv/*
+    */site-packages/*
+
+[report]
+# Minimum coverage percentage
+precision = 2
+show_missing = True
+skip_covered = False
+
+# Exclude lines from coverage
+exclude_lines =
+    # Standard pragmas
+    pragma: no cover
+    
+    # Don't complain about missing debug code
+    def __repr__
+    
+    # Don't complain if tests don't hit defensive assertion code
+    raise AssertionError
+    raise NotImplementedError
+    
+    # Don't complain if non-runnable code isn't run
+    if __name__ == .__main__.:
+    if __name__ == "__main__":
+    
+    # Don't complain about abstract methods
+    @abstractmethod
+    
+    # Type checking blocks
+    if TYPE_CHECKING:
+    
+    # Pass statements
+    pass
+
+[html]
+directory = htmlcov
+title = CKD Predictor Coverage Report
+
+[xml]
+output = coverage.xml

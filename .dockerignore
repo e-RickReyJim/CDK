@@ -1,0 +1,59 @@
+# Docker build targets
+.dockerignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints
+notebooks/
+
+# Git
+.git/
+.gitignore
+
+# Documentation (not needed in container)
+docs/
+*.md
+!README.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# Backup files
+*_old.py
+*.bak
+
+# Logs
+*.log
+
+# Large files (keep models and data)
+# Uncomment if models are in git LFS
+# models/*.pkl
+
+# Assets not needed
+assets/
