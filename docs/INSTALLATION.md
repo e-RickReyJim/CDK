@@ -77,21 +77,6 @@ Open browser to: `http://127.0.0.1:7870`
 
 ---
 
-## 🐳 Docker Installation
-
-For containerized deployment, see [docs/DOCKER.md](DOCKER.md)
-
-**Quick Docker Start:**
-
-```bash
-# Using Docker Compose
-docker-compose up -d
-
-# Using Docker CLI
-docker build -t ckd-predictor .
-docker run -d -p 7870:7870 ckd-predictor
-```
-
 ---
 
 ## 🛠️ Advanced Installation Options

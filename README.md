@@ -119,7 +119,7 @@ flowchart TB
 
 ---
 
-## 🎬 Demo
+## 🎬 Usage
 
 ### Running the Application
 
@@ -167,23 +167,14 @@ CDK/
 │   └── kidney_disease.csv       # CKD patient data
 │
 ├── docs/                         # Documentation
-│   ├── QUICKSTART.md            # Quick reference
 │   ├── INSTALLATION.md          # Installation guide
-│   ├── DOCKER.md                # Docker deployment
 │   ├── FLOWCHART.md             # System flowcharts
 │   └── ARCHITECTURE.md          # Architecture diagrams
-│
-├── tests/                        # Test suite (260+ tests)
-│   ├── conftest.py              # Pytest fixtures and test data
-│   ├── test_utils.py            # Utility tests
-│   ├── test_models.py           # Model tests
-│   ├── test_app.py              # Application tests
-│   ├── test_integration.py      # Integration tests
-│   └── test_data_validation.py  # Validation tests
 │
 ├── assets/                       # Images, logos (future)
 │
 ├── requirements.txt              # Python dependencies
+├── install.ps1                   # Windows installation script
 ├── .gitignore                   # Git ignore rules
 ├── LICENSE                       # MIT License
 └── README.md                    # This file
@@ -208,23 +199,6 @@ This automated script will:
 - ✅ Launch the application
 
 **See [docs/INSTALLATION.md](docs/INSTALLATION.md) for detailed instructions.**
-
----
-
-### Docker Installation
-
-**Using Docker Compose (Easiest):**
-```bash
-docker-compose up -d
-```
-
-**Using Docker CLI:**
-```bash
-docker build -t ckd-predictor .
-docker run -d -p 7870:7870 ckd-predictor
-```
-
-**See [docs/DOCKER.md](docs/DOCKER.md) for complete Docker guide.**
 
 ---
 
@@ -318,33 +292,6 @@ jupyter notebook notebooks/CKD_PCA_Models.ipynb
 - Hyperparameter tuning
 - Performance evaluation
 - Visualization generation
-
----
-
-## 🧪 Testing
-
-### Run Tests
-
-```powershell
-# Install test dependencies
-pip install -r requirements-test.txt
-
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=src --cov-report=html
-```
-
-### Test Suite
-
-- **260+ tests** across 6 test modules
-- **Unit tests** for utility functions and models
-- **Integration tests** for end-to-end workflows
-- **Validation tests** for input checking
-- **95%+ code coverage** target
-
-**See [tests/README.md](tests/README.md) for detailed testing guide.**
 
 ---
 
@@ -454,9 +401,6 @@ Found a bug or have a feature request? [Open an issue](https://github.com/e-Rick
 ```bash
 # Install development dependencies
 pip install -r requirements.txt
-
-# Run tests (future)
-pytest tests/
 
 # Format code
 black src/

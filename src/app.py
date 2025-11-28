@@ -328,7 +328,7 @@ def create_interface():
     # Initialize predictor
     predictor = CKDPredictor()
 
-    with gr.Blocks(title="CKD Stage Predictor", theme=gr.themes.Soft()) as demo:
+    with gr.Blocks(title="CKD Stage Predictor") as demo:
 
         gr.Markdown(
             """
@@ -701,7 +701,7 @@ if __name__ == "__main__":
     demo.launch(
         share=True,  # Set to True to create a public link
         server_name="127.0.0.1",
-        server_port=7870,
+        server_port=7880,  # Change this port number to test different ports
         show_error=True,
         inbrowser=True,  # Automatically open browser
     )
